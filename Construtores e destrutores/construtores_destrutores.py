@@ -13,7 +13,7 @@ class curitia:
 
     def temp_contrato(self):
         print("Mas não aceitei ser reserva do time")
-        print("Vou sair desse time merda e pobre do krl")
+        print("Vou sair desse time merda e pobre")
         print("Adeus filé torcida")
 
 

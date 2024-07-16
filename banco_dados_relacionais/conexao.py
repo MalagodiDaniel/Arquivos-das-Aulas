@@ -5,40 +5,40 @@ print(conexao)
 cursor = conexao.cursor()
 
 ###CRIANDO TABLEA###
-#cursor.execute("CREATE TABLE clientes (id INTEGER PRIMARY KEY AUTOINCREMENT, nome VARCHAR(100), email VARCHAR(50))" )
+cursor.execute("CREATE TABLE clientes (id INTEGER PRIMARY KEY AUTOINCREMENT, nome VARCHAR(100), email VARCHAR(50))" )
 
 
 ###INSERINDO DADOS NA TABELA###
-#cursor.execute('INSERT INTO clientes (nome, email) VALUES ("Talita" ,"talita@gmail.com")')
-#conexao.commit()
+cursor.execute('INSERT INTO clientes (nome, email) VALUES ("Talita" ,"talita@gmail.com")')
+conexao.commit()
 
 
 ###ATUALIZANDO OU MODIFICANDO A TABELA###
-#cursor.execute ("UPDATE clientes SET nome= 'Talita', email= 'talita@gmail.com' WHERE id=2;")
-#conexao.commit()
+cursor.execute ("UPDATE clientes SET nome= 'Talita', email= 'talita@gmail.com' WHERE id=2;")
+conexao.commit()
 
 
 ###INSERINDO MAIS REGISTRO NA TABELA###
-#cursor.execute ("UPDATE clientes SET nome= 'Lorena', email= 'lorena@gmail.com' WHERE id=3;")
-#conexao.commit()
+cursor.execute ("UPDATE clientes SET nome= 'Lorena', email= 'lorena@gmail.com' WHERE id=3;")
+conexao.commit()
 
                 
 ###DELETANDO REGISTRO DA TABELA### 
-#cursor.execute("DELETE FROM clientes WHERE id=3;")
-#conexao.commit()
+cursor.execute("DELETE FROM clientes WHERE id=3;")
+conexao.commit()
 
 ###INSERINDO MUITOS REGISTROS NA TABELA DE UMA VEZ SÓ###
-#def inserir_muitos(conexao, cursor, dados):
-   #cursor.executemany("INSERT INTO clientes (nome, email) VALUES (?, ?)", dados)
-    #conexao.commit()
+def inserir_muitos(conexao, cursor, dados):
+   cursor.executemany("INSERT INTO clientes (nome, email) VALUES (?, ?)", dados)
+conexao.commit()
 
-#dados = [
-    #("Joao", "joao@gmail.com"), 
-    #("Isadora", "isa@gmail.com"), 
-    #("Léo Natel", "natel@gmail.com"),
+dados = [
+    ("Joao", "joao@gmail.com"), 
+    ("Isadora", "isa@gmail.com"), 
+    ("Léo Natel", "natel@gmail.com"),
+]
 
-
-#inserir_muitos(conexao, cursor, dados)  
+inserir_muitos(conexao, cursor, dados)  
 
 ###CONSULTANDO DADOS DA TABELA###
 def recurperar_cliente(cursor, id):
